@@ -5,12 +5,48 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
 
+    //game objects
+    public GameObject BenchZombie1;
+    public GameObject BenchZombie2;
+
+    public GameObject Bench1;
+    public GameObject Bench2;
+
+    public GameObject WinMessage;
+
+    public GameObject DirtMound;
+    public GameObject DugDirt;
+    public GameObject DirtShovel;
+
+    public GameObject Shovel;
+
+    public GameObject Plate;
+
+    public GameObject Lamplight;
+
+    public GameObject Wood;
+
+
     //story progress
+    public bool WIN = false;
+    
     public bool hasCandle = false;
+    public bool hasFix = false;
     public bool hasWood = false;
     public bool hasPlate = false;
     public bool hasShovel = false;
+    public bool hasKey = false;
+    public bool hasSpins = false;
 
+    public bool needCandle=false;
+    public bool needPlate=false;
+    public bool needFix = false;
+    public bool needWood=false;
+    public bool needShovel=false;
+    public bool needSpins = false;
+
+    public bool gotoMound = false;
+    
 
 
     //collectables
@@ -52,6 +88,7 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         CollectList();
+        SetObjects();
     }
 
     private void FixedUpdate()
@@ -82,5 +119,34 @@ public class PlayerScript : MonoBehaviour
         if (hasWPumpkin) WpumpMark.SetActive(true);
         if (hasSpear) SpearMark.SetActive(true);
         if (hasUrn) UrnMark.SetActive(true);
+    }
+
+    public void SetObjects()
+    {
+        if (hasCandle) Lamplight.SetActive(false);
+
+        if (hasKey)
+        {
+            DirtMound.SetActive(false);
+            DugDirt.SetActive(true);
+            DirtShovel.SetActive(true);
+        }
+
+        if (hasShovel) Shovel.SetActive(false);
+
+        if (hasFix)
+        {
+            BenchZombie1.SetActive(false);
+            BenchZombie2.SetActive(true);
+
+            Bench1.SetActive(false);
+            Bench2.SetActive(true);
+        }
+
+        if (hasPlate) Plate.SetActive(false);
+
+        if (hasWood) Wood.SetActive(false);
+
+
     }
 }

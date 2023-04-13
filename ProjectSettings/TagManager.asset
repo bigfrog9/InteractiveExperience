@@ -25,6 +25,7 @@ TagManager:
   - WrongShovel
   - Dialogue
   - Info
+  - SittingZombie
   layers:
   - Default
   - TransparentFX

@@ -24,6 +24,12 @@ public class Interaction : MonoBehaviour
         {
             interactables.LearnInfo();
         }
+
+        else if (interactables.interactionObject == Interactables.InteractionObject.dialogue)
+        {
+            interactables.Dialogue();
+        }
+
     }
 
     void OnTriggerStay(Collider other)
@@ -116,13 +122,13 @@ public class Interaction : MonoBehaviour
             interactables = interactionObj.GetComponent<Interactables>();
 
         }
-        /*
-        else if (other.CompareTag("RepairMan") == true)
+        
+        else if (other.CompareTag("Repairman") == true)
         {
             interactionObj = other.gameObject;
             interactables = interactionObj.GetComponent<Interactables>();
 
-        } */
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -200,11 +206,11 @@ public class Interaction : MonoBehaviour
             interactionObj = null;
             interactables = null;
         }
-        /*
-        else if (other.CompareTag("RepairMan") == true)
+        
+        else if (other.CompareTag("Repairman") == true)
         {
             interactionObj = null;
             interactables = null;
-        }*/
+        }
     }
 }
