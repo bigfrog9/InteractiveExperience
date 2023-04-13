@@ -23,6 +23,8 @@ TagManager:
   - Pumpkin
   - Repairman
   - WrongShovel
+  - Dialogue
+  - Info
   layers:
   - Default
   - TransparentFX

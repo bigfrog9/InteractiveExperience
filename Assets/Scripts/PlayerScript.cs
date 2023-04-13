@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
+
+    //story progress
+    public bool hasCandle = false;
+    public bool hasWood = false;
+    public bool hasPlate = false;
+    public bool hasShovel = false;
+
+
+
+    //collectables
     public GameObject interactSpeech;
 
     public bool hasCross = false;
-
     public bool hasTPumpkin=false;
-    
     public bool hasWPumpkin=false;
-    
     public bool hasSpear=false;
-    
     public bool hasUrn=false;
 
 
