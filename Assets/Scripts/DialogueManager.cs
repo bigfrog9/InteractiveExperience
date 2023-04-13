@@ -59,5 +59,7 @@ public class DialogueManager : MonoBehaviour
         Player.GetComponent<Interaction>().enabled = false;
 
         Player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        Player.GetComponent<Rigidbody>().freezeRotation = true;
+
     }
 }

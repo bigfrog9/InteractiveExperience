@@ -17,6 +17,8 @@ public class Interactables : MonoBehaviour
     public GameObject Lamp2;
     */
 
+    public GameObject InfoPanel;
+
     public PlayerScript player;
     public DialogueManager speech;
 
@@ -109,7 +111,7 @@ public class Interactables : MonoBehaviour
                 player.needPlate = true;
             }
 
-            else if (player.needShovel == true &&player.needPlate==true&&player.hasPlate==false)
+            else if (player.needPlate==true&&player.hasPlate==false)
             {
                 FindObjectOfType<DialogueManager>().StartDialogue1(dialogue2);
 
@@ -332,8 +334,12 @@ public class Interactables : MonoBehaviour
     IEnumerator InfoWait(string Info, float delay)
     {
         infoText.text = Info;
+        InfoPanel.SetActive(true);
+
         yield return new WaitForSeconds(delay);
+
         infoText.text = null;
+        InfoPanel.SetActive(false);
     }
 
 }
