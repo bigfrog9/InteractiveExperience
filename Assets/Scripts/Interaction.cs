@@ -116,6 +116,12 @@ public class Interaction : MonoBehaviour
 
         }
 
+        else if (other.CompareTag("SittingZombie") == true)
+        {
+            interactionObj = other.gameObject;
+            interactables=interactionObj.GetComponent<Interactables>();
+        }
+
         else if (other.CompareTag("Pumpkin") == true)
         {
             interactionObj = other.gameObject;
@@ -128,6 +134,12 @@ public class Interaction : MonoBehaviour
             interactionObj = other.gameObject;
             interactables = interactionObj.GetComponent<Interactables>();
 
+        }
+
+        else if (other.CompareTag("WrongShovel") == true)
+        {
+            interactionObj= other.gameObject;
+            interactables = interactionObj.GetComponent<Interactables>();
         }
     }
 

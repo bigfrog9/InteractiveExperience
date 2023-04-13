@@ -109,7 +109,7 @@ public class Interactables : MonoBehaviour
                 player.needPlate = true;
             }
 
-            else if (player.needShovel == true &&player.needPlate==true)
+            else if (player.needShovel == true &&player.needPlate==true&&player.hasPlate==false)
             {
                 FindObjectOfType<DialogueManager>().StartDialogue1(dialogue2);
 
@@ -144,7 +144,7 @@ public class Interactables : MonoBehaviour
 
             }
 
-            else if (player.needPlate == true)
+            else if (player.needPlate == true&&player.needFix==false)
             {
                 player.needFix = true;
                 FindObjectOfType<DialogueManager>().StartDialogue1(dialogue1);
@@ -179,11 +179,13 @@ public class Interactables : MonoBehaviour
         {
             if (player.gotoMound == false)
             {
+                Debug.Log("Neat");
                 FindObjectOfType<DialogueManager>().StartDialogue1(dialogue0);
             }
 
             else if (player.gotoMound == true&&player.hasShovel==false)
             {
+                player.needShovel = true;
                 FindObjectOfType<DialogueManager>().StartDialogue1(dialogue1);
 
             }
@@ -226,7 +228,7 @@ public class Interactables : MonoBehaviour
 
             }
 
-            else if (player.needWood==true&& player.hasSpins == false)
+            else if (player.needWood==true&& player.needSpins==false)
             {
                 player.needSpins = true;
                 FindObjectOfType<DialogueManager>().StartDialogue1(dialogue1);
@@ -263,6 +265,7 @@ public class Interactables : MonoBehaviour
 
             else if (player.needFix == true&&player.needWood==false)
             {
+                player.needWood = true;
                 FindObjectOfType<DialogueManager>().StartDialogue1(dialogue1);
 
             }
@@ -297,6 +300,26 @@ public class Interactables : MonoBehaviour
             {
                 player.WIN = true;
                 FindObjectOfType<DialogueManager>().StartDialogue1(dialogue1);
+            }
+        }
+
+        if (gameObject.CompareTag("WrongShovel") == true)
+        {
+            if (player.needShovel == false)
+            {
+                FindObjectOfType<DialogueManager>().StartDialogue1(dialogue0);
+            }
+
+            else if (player.needShovel== true&&player.hasKey==false)
+            {
+                FindObjectOfType<DialogueManager>().StartDialogue1(dialogue1);
+
+            }
+
+            else if (player.hasKey == true)
+            {
+                FindObjectOfType<DialogueManager>().StartDialogue1(dialogue2);
+
             }
         }
     }

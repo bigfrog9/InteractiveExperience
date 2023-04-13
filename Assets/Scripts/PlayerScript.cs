@@ -119,6 +119,8 @@ public class PlayerScript : MonoBehaviour
         if (hasWPumpkin) WpumpMark.SetActive(true);
         if (hasSpear) SpearMark.SetActive(true);
         if (hasUrn) UrnMark.SetActive(true);
+
+        if (hasCross && hasTPumpkin && hasWPumpkin && hasSpear && hasUrn) hasSpins = true;
     }
 
     public void SetObjects()
@@ -147,6 +149,7 @@ public class PlayerScript : MonoBehaviour
 
         if (hasWood) Wood.SetActive(false);
 
+        if (WIN) WinMessage.SetActive(true);
 
     }
 }

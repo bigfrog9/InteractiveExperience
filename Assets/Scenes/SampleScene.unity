@@ -870,8 +870,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.0576671
-  m_Center: {x: -0.103446126, y: 0.45421657, z: 5.436652e-10}
+  m_Radius: 0.9282858
+  m_Center: {x: -0.10344571, y: 0.32483187, z: 4.97673e-10}
 --- !u!114 &101032430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2472,7 +2472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6b9e74455c929d944b8622085154d6ad, type: 3}
       propertyPath: m_TagString
-      value: Dialogue
+      value: SittingZombie
       objectReference: {fileID: 0}
     - target: {fileID: 4102826758126205000, guid: 6b9e74455c929d944b8622085154d6ad, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6194,7 +6194,7 @@ MonoBehaviour:
   hasWood: 0
   hasPlate: 0
   hasShovel: 0
-  hasKey: 0
+  hasKey: 1
   hasSpins: 0
   needCandle: 0
   needPlate: 0
@@ -8697,7 +8697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bf6a541e85c5c4b49b0e4b5e48dd19b8, type: 3}
       propertyPath: m_Name
-      value: shovel (1)
+      value: WrongShovel
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bf6a541e85c5c4b49b0e4b5e48dd19b8, type: 3}
       propertyPath: m_TagString
@@ -9811,7 +9811,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 96d35b97a83041943b885841e5fa70df, type: 3}
       propertyPath: m_TagString
-      value: Dialogue
+      value: Gate
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96d35b97a83041943b885841e5fa70df, type: 3}
@@ -10690,13 +10690,13 @@ MonoBehaviour:
   speech: {fileID: 0}
   interactionObject: 2
   Info: 
-  dialogue0: []
-  dialogue1:
+  dialogue0:
   - Wow, what a nice shovel.
-  dialogue2:
+  dialogue1:
   - Definitely a nice shovel, but you don't feel like using this one.
-  dialogue3:
+  dialogue2:
   - You don't really need a shovel anymore, but this one is still nice.
+  dialogue3: []
   dialogue4: []
 --- !u!4 &1757761169 stripped
 Transform:
@@ -11554,8 +11554,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.6464396, y: 0.6610211, z: 1.2947223}
-  m_Center: {x: -0.04507762, y: 0.33051056, z: 0.081361175}
+  m_Size: {x: 0.77498126, y: 0.6610211, z: 1.5469265}
+  m_Center: {x: 0.019193266, y: 0.33051056, z: 0.20746346}
 --- !u!114 &1933904508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11572,14 +11572,27 @@ MonoBehaviour:
   speech: {fileID: 0}
   interactionObject: 2
   Info: 
-  dialogue0: []
-  dialogue1:
+  dialogue0:
   - Looks like a freshly filled grave.
-  dialogue2:
+  dialogue1:
   - You'd really like a shovel.
-  dialogue3:
+  dialogue2:
   - You dug up the grave and got the Key!
+  dialogue3: []
   dialogue4: []
+--- !u!65 &1933904511
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933904502}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5731401, y: 0.6046146, z: 1.1320001}
+  m_Center: {x: 0, y: 0.3023073, z: 0}
 --- !u!4 &1942027921 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: efa8edc3231247348a8aaeb5ac57ca94, type: 3}
@@ -12367,6 +12380,29 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.9311848
   m_Center: {x: 0.00000023762334, y: 0.41195, z: -0.8811848}
+--- !u!114 &2093053856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093053849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc0c33f462e54514db96215ae3cbce75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 940137281}
+  speech: {fileID: 0}
+  interactionObject: 2
+  Info: 
+  dialogue0:
+  - The gate is locked, making it very difficult to leave.
+  dialogue1:
+  - You opened the gate with a key!
+  dialogue2: []
+  dialogue3: []
+  dialogue4: []
 --- !u!1 &2097564466 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f82d175cdd52b9c479734dbd7bc71f06, type: 3}
